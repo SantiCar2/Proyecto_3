@@ -18,9 +18,9 @@ import "./styles.css";
 function App() {
     // Store Polygon path in state
     const [path, setPath] = useState([
-        { lat: 52.52549080781086, lng: 13.398118538856465 },
-        { lat: 52.48578559055679, lng: 13.36653284549709 },
-        { lat: 52.48871246221608, lng: 13.44618372440334 }
+        { lat: 6.202707, lng: -75.5946637},
+        { lat: 6.210088, lng: -75.5884307 },
+        { lat: 6.204424, lng: -75.582701 }
     ]);
 
     // Define refs for Polygon instance and listeners
@@ -67,14 +67,15 @@ function App() {
             <LoadScript
                 id="script-loader"
                 googleMapsApiKey=""
-                language="en"
-                region="us"
+                language="es"
+                region="co"
             >
                 <GoogleMap
                     mapContainerClassName="App-map"
-                    center={{ lat: 52.52047739093263, lng: 13.36653284549709 }}
-                    zoom={12}
+                    center={{ lat: 6.205811, lng: -75.589450 }}
+                    zoom={16}
                     version="weekly"
+                    mapTypeId="satellite"
                     on
                 >
                     <Polygon
@@ -82,9 +83,13 @@ function App() {
                         editable
                         draggable
                         path={path}
+                        fillColor="green"
+
                         // Event used when manipulating and adding points
                         onMouseUp={onEdit}
                         // Event used when dragging the whole Polygon
+
+                        //HOLI! Bien o que?
                         onDragEnd={onEdit}
                         onLoad={onLoad}
                         onUnmount={onUnmount}
